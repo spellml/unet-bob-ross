@@ -235,7 +235,7 @@ dataroot = Path('/mnt/segmented-bob-ross-images/')
 dataset = BobRossSegmentedImagesDataset(dataroot)
 dataloader = DataLoader(dataset, shuffle=True, batch_size=8)
 scaler = torch.cuda.amp.GradScaler()
-writer = SummaryWriter(f'/spell/tensorboards/model_1')
+writer = SummaryWriter(f'/spell/tensorboards/model_4')
 
 model = UNet()
 model.cuda()
@@ -282,7 +282,7 @@ for epoch in range(1, NUM_EPOCHS + 1):
             )
 
         writer.add_scalar(
-            'training loss', curr_loss, epoch * len(dataloader) + i
+            'training loss', lv, epoch * len(batches) + i
         )
         losses.append(curr_loss)
 
@@ -292,4 +292,7 @@ for epoch in range(1, NUM_EPOCHS + 1):
     )
     if not os.path.exists('/spell/checkpoints/'):
         os.mkdir('/spell/checkpoints/')
-    torch.save(model.state_dict(), f'/spell/checkpoints/model_{epoch}.pth')
+    if epoch % 10 == 0:
+        torch.save(model.state_dict(), f'/spell/checkpoints/model_{epoch}.pth')
+
+torch.save(model.state_dict(), f'/spell/checkpoints/model_final.pth')
