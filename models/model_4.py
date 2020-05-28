@@ -282,7 +282,7 @@ for epoch in range(1, NUM_EPOCHS + 1):
             )
 
         writer.add_scalar(
-            'training loss', lv, epoch * len(batches) + i
+            'training loss', curr_loss, epoch * len(dataloader) + i
         )
         losses.append(curr_loss)
 
