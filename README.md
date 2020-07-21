@@ -1,4 +1,4 @@
-# unet-bob-ross
+# unet-bob-ross <a href="https://web.spell.ml/workspace_create?workspaceName=unet-bob-ross&githubUrl=https%3A%2F%2Fgithub.com%2Fspellml%2Funet-bob-ross&pip=kaggle&envVars=KAGGLE_USERNAME%3DYOUR_USERNAME,KAGGLE_KEY=YOUR_KEY"><img src=https://spell.ml/badge.svg height=20px/></a>
 
 Handcrafted [UNet](https://arxiv.org/abs/1505.04597) `pytorch` training script. Uses the [Segmented Bob Ross Images](https://www.kaggle.com/residentmario/segmented-bob-ross-images) dataset on Kaggle.
 
