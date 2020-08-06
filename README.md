@@ -6,7 +6,7 @@ To run code and notebooks in a Spell workspace:
 
 ```bash
 spell jupyter --lab \
-  --github-url https://github.com/ResidentMario/spell-unet-bob-ross.git \
+  --github-url https://github.com/spellml/unet-bob-ross.git \
   --pip kaggle \
   --env KAGGLE_USERNAME=YOUR_USERNAME \
   --env KAGGLE_KEY=YOUR_KEY \
@@ -18,21 +18,21 @@ To execute the training scripts in a Spell run:
 ```bash
 spell run \
   --machine-type t4 \
-  --github-url https://github.com/ResidentMario/spell-unet-bob-ross.git \
+  --github-url https://github.com/spellml/unet-bob-ross.git \
   --pip kaggle \
   --env KAGGLE_USERNAME=YOUR_USERNAME \
   --env KAGGLE_KEY=YOUR_KEY \
   --tensorboard-dir /spell/tensorboards/model_3 \
-  "chmod +x /spell/scripts/download_data.sh; chmod +x /spell/scripts/upgrade_env.sh; /spell/scripts/download_data.sh; /spell/scripts/upgrade_env.sh; python /spell/models/model_3.py"
+  "chmod +x /spell/scripts/download_data.sh /spell/scripts/upgrade_env.sh; /spell/scripts/download_data.sh; /spell/scripts/upgrade_env.sh; python /spell/models/model_3.py"
 ```
 
 ```bash
 spell run \
   --machine-type t4 \
-  --github-url https://github.com/ResidentMario/spell-unet-bob-ross.git \
+  --github-url https://github.com/spellml/unet-bob-ross.git \
   --pip transformers --pip tokenizers --pip kaggle \
   --env KAGGLE_USERNAME=YOUR_USERNAME \
   --env KAGGLE_KEY=YOUR_KEY \
   --tensorboard-dir /spell/tensorboards/model_4 \
-  "chmod +x /spell/scripts/download_data.sh; chmod +x /spell/scripts/upgrade_env.sh; /spell/scripts/download_data.sh; /spell/scripts/upgrade_env.sh; python /spell/models/model_4.py"
+  "chmod +x /spell/scripts/download_data.sh /spell/scripts/upgrade_env.sh; /spell/scripts/download_data.sh; /spell/scripts/upgrade_env.sh; python /spell/models/model_4.py"
 ```
