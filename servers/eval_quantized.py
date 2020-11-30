@@ -311,6 +311,8 @@ def main():
     
     print(f"Evaluation done in {str(time.time() - start_time)} seconds.")
 
+    print(f"Writing quantized model to disk.")
+    torch.save(model.state_dict(), f'/spell/model_quantized.pth')
 
 if __name__ == "__main__":
     main()
